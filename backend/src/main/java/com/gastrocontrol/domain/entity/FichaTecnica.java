@@ -38,7 +38,7 @@ public class FichaTecnica extends BaseEntity {
     private BigDecimal qtdPorPorcao;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, columnDefinition = "unidade_medida")
+    @Column(nullable = false)
     private UnidadeMedida unidade;
 
     /**

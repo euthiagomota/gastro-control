@@ -20,6 +20,9 @@ FROM amazoncorretto:21-alpine
 
 WORKDIR /app
 
+# Install curl for health checks
+RUN apk add --no-cache curl
+
 # Security: create non-root user
 RUN addgroup -S gastrocontrol && adduser -S gastrocontrol -G gastrocontrol
 
@@ -43,7 +46,7 @@ ENV JAVA_OPTS="-Xms256m -Xmx512m \
 
 EXPOSE 8080
 
-HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
-    CMD wget -qO- http://localhost:8080/api/actuator/health || exit 1
+HEALTHCHECK --interval=15s --timeout=5s --start-period=180s --retries=20 \
+    CMD curl -f http://localhost:8080/api/actuator/health || exit 1
 
 ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]

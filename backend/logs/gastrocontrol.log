@@ -1,0 +1,1107 @@
+2026-06-02 11:33:52 [main] INFO  c.g.GastroControlApplication - Starting GastroControlApplication using Java 21.0.11 with PID 29268 (C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend\target\classes started by thiago.damota in C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend)
+2026-06-02 11:33:52 [main] DEBUG c.g.GastroControlApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-06-02 11:33:52 [main] INFO  c.g.GastroControlApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-02 11:33:53 [main] INFO  c.g.GastroControlApplication - Starting GastroControlApplication using Java 21.0.11 with PID 31588 (C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend\target\classes started by thiago.damota in C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend)
+2026-06-02 11:33:53 [main] DEBUG c.g.GastroControlApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-06-02 11:33:53 [main] INFO  c.g.GastroControlApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-02 11:33:57 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-02 11:33:57 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-02 11:33:57 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 395 ms. Found 11 JPA repository interfaces.
+2026-06-02 11:33:57 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 401 ms. Found 11 JPA repository interfaces.
+2026-06-02 11:34:00 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-02 11:34:00 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-02 11:34:00 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-02 11:34:00 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-06-02 11:34:01 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 8722 ms
+2026-06-02 11:34:01 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2026-06-02 11:34:01 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7422 ms
+2026-06-02 11:34:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Starting...
+2026-06-02 11:34:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Starting...
+2026-06-02 11:34:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Starting...
+2026-06-02 11:34:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Starting...
+2026-06-02 11:34:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Starting...
+2026-06-02 11:34:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Starting...
+2026-06-02 11:34:05 [main] ERROR o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter' defined in file [C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend\target\classes\com\gastrocontrol\security\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'userDetailsServiceImpl' defined in file [C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend\target\classes\com\gastrocontrol\security\UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'usuarioRepository' defined in com.gastrocontrol.repository.UsuarioRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-06-02 11:34:05 [main] ERROR o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter' defined in file [C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend\target\classes\com\gastrocontrol\security\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'userDetailsServiceImpl' defined in file [C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend\target\classes\com\gastrocontrol\security\UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'usuarioRepository' defined in com.gastrocontrol.repository.UsuarioRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-06-02 11:34:05 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-06-02 11:34:05 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-06-02 11:34:05 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-06-02 11:34:05 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-02 11:34:05 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:619)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.gastrocontrol.GastroControlApplication.main(GastroControlApplication.java:24)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:516)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:222)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthenticationFilter' defined in file [C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend\target\classes\com\gastrocontrol\security\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'userDetailsServiceImpl' defined in file [C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend\target\classes\com\gastrocontrol\security\UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'usuarioRepository' defined in com.gastrocontrol.repository.UsuarioRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1212)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsServiceImpl' defined in file [C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend\target\classes\com\gastrocontrol\security\UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'usuarioRepository' defined in com.gastrocontrol.repository.UsuarioRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1212)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 56 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'usuarioRepository' defined in com.gastrocontrol.repository.UsuarioRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1705)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1454)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 70 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:682)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 84 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 96 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:72)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:134)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:147)
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	... 105 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:352)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48)
+	... 111 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:694)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 123 common frames omitted
+2026-06-02 11:35:35 [main] INFO  c.g.GastroControlApplication - Starting GastroControlApplication using Java 21.0.11 with PID 40784 (C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend\target\classes started by thiago.damota in C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend)
+2026-06-02 11:35:35 [main] DEBUG c.g.GastroControlApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-06-02 11:35:35 [main] INFO  c.g.GastroControlApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-02 11:35:38 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-02 11:35:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 241 ms. Found 11 JPA repository interfaces.
+2026-06-02 11:35:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-02 11:35:41 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-02 11:35:41 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-06-02 11:35:41 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2026-06-02 11:35:41 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5895 ms
+2026-06-02 11:35:42 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Starting...
+2026-06-02 11:35:43 [main] INFO  com.zaxxer.hikari.pool.HikariPool - GastroControlHikariPool - Added connection org.postgresql.jdbc.PgConnection@43294e9b
+2026-06-02 11:35:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Start completed.
+2026-06-02 11:35:43 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/gastrocontrol (PostgreSQL 16.14)
+2026-06-02 11:35:43 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.107s)
+2026-06-02 11:35:43 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2026-06-02 11:35:43 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-02 11:35:43 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-02 11:35:43 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-06-02 11:35:43 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-02 11:35:44 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-02 11:35:44 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-02 11:35:46 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-02 11:35:46 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-02 11:35:46 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-02 11:35:47 [main] DEBUG c.g.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-02 11:35:47 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-02 11:35:47 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-02 11:35:50 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoints beneath base path '/actuator'
+2026-06-02 11:35:51 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-06-02 11:35:51 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-02 11:35:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Shutdown initiated...
+2026-06-02 11:35:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Shutdown completed.
+2026-06-02 11:35:51 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-02 11:35:51 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-06-02 11:41:00 [main] INFO  c.g.GastroControlApplication - Starting GastroControlApplication using Java 21.0.11 with PID 24060 (C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend\target\classes started by thiago.damota in C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend)
+2026-06-02 11:41:00 [main] DEBUG c.g.GastroControlApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-06-02 11:41:00 [main] INFO  c.g.GastroControlApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-02 11:41:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-02 11:41:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 134 ms. Found 11 JPA repository interfaces.
+2026-06-02 11:41:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-02 11:41:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-02 11:41:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-06-02 11:41:03 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2026-06-02 11:41:03 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3058 ms
+2026-06-02 11:41:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Starting...
+2026-06-02 11:41:04 [main] INFO  com.zaxxer.hikari.pool.HikariPool - GastroControlHikariPool - Added connection org.postgresql.jdbc.PgConnection@5be69f7e
+2026-06-02 11:41:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Start completed.
+2026-06-02 11:41:04 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/gastrocontrol (PostgreSQL 16.14)
+2026-06-02 11:41:04 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.041s)
+2026-06-02 11:41:04 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2026-06-02 11:41:04 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-02 11:41:04 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-02 11:41:05 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-06-02 11:41:05 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-02 11:41:05 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-02 11:41:05 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-02 11:41:07 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-02 11:41:07 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-02 11:41:07 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-02 11:41:08 [main] DEBUG c.g.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-02 11:41:08 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-02 11:41:08 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-02 11:41:10 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoints beneath base path '/actuator'
+2026-06-02 11:41:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2026-06-02 11:41:12 [main] INFO  c.g.GastroControlApplication - Started GastroControlApplication in 12.026 seconds (process running for 13.022)
+2026-06-02 12:28:50 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-02 12:28:50 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-02 12:28:50 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 139 ms
+2026-06-02 12:28:51 [http-nio-8080-exec-2] WARN  c.g.exception.GlobalExceptionHandler - Erros de validação: [Senha é obrigatória]
+2026-06-02 12:29:03 [http-nio-8080-exec-3] WARN  c.g.exception.GlobalExceptionHandler - Erros de validação: [Senha é obrigatória]
+2026-06-02 12:34:48 [http-nio-8080-exec-7] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 12:34:51 [http-nio-8080-exec-8] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 12:34:59 [http-nio-8080-exec-9] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 12:35:07 [http-nio-8080-exec-10] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 12:37:40 [http-nio-8080-exec-2] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 12:37:48 [http-nio-8080-exec-3] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 12:40:30 [http-nio-8080-exec-5] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 12:40:41 [http-nio-8080-exec-6] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 12:41:01 [http-nio-8080-exec-7] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 12:58:18 [http-nio-8080-exec-9] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 12:58:20 [http-nio-8080-exec-10] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 12:58:21 [http-nio-8080-exec-1] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 12:58:34 [http-nio-8080-exec-2] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 13:00:52 [http-nio-8080-exec-4] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 13:01:12 [http-nio-8080-exec-5] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 13:01:37 [http-nio-8080-exec-7] INFO  c.gastrocontrol.service.AuthService - Novo usuário cadastrado: euthiagojose2004@gmail.com
+2026-06-02 13:04:12 [http-nio-8080-exec-10] INFO  c.gastrocontrol.service.AuthService - Login realizado com sucesso para: euthiagojose2004@gmail.com
+2026-06-02 13:05:02 [http-nio-8080-exec-1] INFO  c.gastrocontrol.service.AuthService - Login realizado com sucesso para: euthiagojose2004@gmail.com
+2026-06-02 13:09:58 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-02 13:09:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Shutdown initiated...
+2026-06-02 13:09:58 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Shutdown completed.
+2026-06-02 13:10:07 [main] INFO  c.g.GastroControlApplication - Starting GastroControlApplication using Java 21.0.11 with PID 43072 (C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend\target\classes started by thiago.damota in C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend)
+2026-06-02 13:10:07 [main] DEBUG c.g.GastroControlApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-06-02 13:10:07 [main] INFO  c.g.GastroControlApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-02 13:10:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-02 13:10:10 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 209 ms. Found 11 JPA repository interfaces.
+2026-06-02 13:10:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-02 13:10:12 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-02 13:10:12 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-06-02 13:10:12 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2026-06-02 13:10:12 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5013 ms
+2026-06-02 13:10:13 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Starting...
+2026-06-02 13:10:13 [main] INFO  com.zaxxer.hikari.pool.HikariPool - GastroControlHikariPool - Added connection org.postgresql.jdbc.PgConnection@76220ef1
+2026-06-02 13:10:13 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Start completed.
+2026-06-02 13:10:13 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/gastrocontrol (PostgreSQL 16.14)
+2026-06-02 13:10:13 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.093s)
+2026-06-02 13:10:13 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2026-06-02 13:10:13 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-02 13:10:14 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-02 13:10:14 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-06-02 13:10:14 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-02 13:10:15 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-02 13:10:15 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-02 13:10:17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-02 13:10:17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-02 13:10:17 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-02 13:10:18 [main] DEBUG c.g.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-02 13:10:18 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-02 13:10:18 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-02 13:10:20 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoints beneath base path '/actuator'
+2026-06-02 13:10:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2026-06-02 13:10:22 [main] INFO  c.g.GastroControlApplication - Started GastroControlApplication in 15.119 seconds (process running for 16.24)
+2026-06-02 13:10:57 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-02 13:10:57 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-02 13:10:57 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2026-06-02 13:10:58 [http-nio-8080-exec-1] INFO  c.gastrocontrol.service.AuthService - Login realizado com sucesso para: euthiagojose2004@gmail.com
+2026-06-02 13:11:14 [http-nio-8080-exec-2] INFO  c.gastrocontrol.service.AuthService - Login realizado com sucesso para: euthiagojose2004@gmail.com
+2026-06-02 13:13:30 [http-nio-8080-exec-9] INFO  c.gastrocontrol.service.AuthService - Login realizado com sucesso para: euthiagojose2004@gmail.com
+2026-06-02 13:15:36 [http-nio-8080-exec-10] INFO  c.gastrocontrol.service.AuthService - Login realizado com sucesso para: euthiagojose2004@gmail.com
+2026-06-02 13:23:32 [http-nio-8080-exec-8] INFO  c.gastrocontrol.service.AuthService - Login realizado com sucesso para: euthiagojose2004@gmail.com
+2026-06-02 13:24:01 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 13:24:02 [http-nio-8080-exec-1] WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-06-02 13:24:02 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 13:25:09 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 13:25:09 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 13:39:06 [http-nio-8080-exec-6] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 13:39:12 [http-nio-8080-exec-4] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 13:39:16 [http-nio-8080-exec-1] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 13:39:17 [http-nio-8080-exec-2] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 13:39:18 [http-nio-8080-exec-9] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 13:39:19 [http-nio-8080-exec-3] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 13:39:20 [http-nio-8080-exec-5] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 14:07:28 [main] INFO  c.g.GastroControlApplication - Starting GastroControlApplication using Java 21.0.8 with PID 25284 (C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend\target\classes started by thiago.damota in C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend)
+2026-06-02 14:07:28 [main] DEBUG c.g.GastroControlApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-06-02 14:07:28 [main] INFO  c.g.GastroControlApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-02 14:07:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-02 14:07:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 102 ms. Found 11 JPA repository interfaces.
+2026-06-02 14:07:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-02 14:07:31 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-02 14:07:31 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-06-02 14:07:31 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2026-06-02 14:07:31 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3615 ms
+2026-06-02 14:07:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Starting...
+2026-06-02 14:07:32 [main] INFO  com.zaxxer.hikari.pool.HikariPool - GastroControlHikariPool - Added connection org.postgresql.jdbc.PgConnection@299eca90
+2026-06-02 14:07:32 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Start completed.
+2026-06-02 14:07:32 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/gastrocontrol (PostgreSQL 16.14)
+2026-06-02 14:07:33 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.189s)
+2026-06-02 14:07:33 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2026-06-02 14:07:33 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-02 14:07:33 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-02 14:07:34 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-06-02 14:07:34 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-02 14:07:34 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-02 14:07:35 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-02 14:07:37 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-02 14:07:37 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-02 14:07:37 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-02 14:07:38 [main] DEBUG c.g.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-02 14:07:38 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-02 14:07:38 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-02 14:07:39 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoints beneath base path '/actuator'
+2026-06-02 14:07:40 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-06-02 14:07:40 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-02 14:07:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Shutdown initiated...
+2026-06-02 14:07:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Shutdown completed.
+2026-06-02 14:07:40 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-02 14:07:40 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-06-02 14:08:32 [http-nio-8080-exec-7] WARN  o.s.b.a.mail.MailHealthIndicator - Mail health check failed
+jakarta.mail.AuthenticationFailedException: failed to connect, no password specified?
+	at jakarta.mail.Service.connect(Service.java:379)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.testConnection(JavaMailSenderImpl.java:360)
+	at org.springframework.boot.actuate.mail.MailHealthIndicator.doHealthCheck(MailHealthIndicator.java:52)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:82)
+	at org.springframework.boot.actuate.health.HealthIndicator.getHealth(HealthIndicator.java:37)
+	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.getHealth(HealthEndpointWebExtension.java:94)
+	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.getHealth(HealthEndpointWebExtension.java:47)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getLoggedHealth(HealthEndpointSupport.java:172)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:145)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getAggregateContribution(HealthEndpointSupport.java:156)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:141)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:110)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:81)
+	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.health(HealthEndpointWebExtension.java:80)
+	at org.springframework.boot.actuate.health.HealthEndpointWebExtension.health(HealthEndpointWebExtension.java:69)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:74)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60)
+	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$ServletWebOperationAdapter.handle(AbstractWebMvcEndpointHandlerMapping.java:327)
+	at org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(AbstractWebMvcEndpointHandlerMapping.java:434)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340)
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-06-02 14:25:42 [http-nio-8080-exec-10] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 14:25:46 [http-nio-8080-exec-1] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 14:26:11 [http-nio-8080-exec-10] INFO  c.gastrocontrol.service.AuthService - Login realizado com sucesso para: euthiagojose2004@gmail.com
+2026-06-02 14:27:48 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:27:48 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:30:41 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:30:42 [http-nio-8080-exec-10] WARN  c.g.exception.GlobalExceptionHandler - Erros de validação: [Número de porções é obrigatório]
+2026-06-02 14:30:44 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:30:44 [http-nio-8080-exec-7] WARN  c.g.exception.GlobalExceptionHandler - Erros de validação: [Número de porções é obrigatório]
+2026-06-02 14:30:45 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:30:45 [http-nio-8080-exec-8] WARN  c.g.exception.GlobalExceptionHandler - Erros de validação: [Número de porções é obrigatório]
+2026-06-02 14:30:45 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:30:45 [http-nio-8080-exec-6] WARN  c.g.exception.GlobalExceptionHandler - Erros de validação: [Número de porções é obrigatório]
+2026-06-02 14:30:45 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:30:45 [http-nio-8080-exec-4] WARN  c.g.exception.GlobalExceptionHandler - Erros de validação: [Número de porções é obrigatório]
+2026-06-02 14:30:45 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:30:45 [http-nio-8080-exec-1] WARN  c.g.exception.GlobalExceptionHandler - Erros de validação: [Número de porções é obrigatório]
+2026-06-02 14:30:54 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:30:54 [http-nio-8080-exec-2] WARN  c.g.exception.GlobalExceptionHandler - Erros de validação: [Número de porções é obrigatório]
+2026-06-02 14:35:08 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:35:08 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:35:08 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:35:08 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:35:08 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:35:08 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:35:08 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:35:08 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:37:14 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:37:14 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:37:14 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:37:14 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:37:14 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:37:15 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:37:15 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:37:15 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:38:16 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:38:16 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:38:16 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:56:03 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:56:03 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:56:03 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:56:03 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:56:15 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:56:15 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:56:15 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:56:15 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:56:52 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:56:52 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:56:52 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:56:52 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:57:30 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 14:57:30 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:00:05 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:00:05 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:00:05 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:00:05 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:00:08 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:00:08 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:00:08 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:00:08 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:00:53 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:00:53 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:00:53 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:00:53 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:02:19 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:02:19 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:02:19 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:02:19 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:06:06 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:06:06 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:06:06 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:06:06 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:06:06 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:06:06 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:06:06 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:06:06 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:22 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:22 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:22 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:22 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:53 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:53 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:53 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:53 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:59 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:59 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:59 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:59 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:59 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:59 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:59 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:09:59 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:02 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:51 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:51 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:51 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:51 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:53 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:53 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:53 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:10:53 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:53 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:53 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:53 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:53 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:53 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:53 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:53 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:53 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:11:55 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:12:58 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:12:59 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:12:59 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:12:59 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:12:59 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:12:59 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:12:59 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:12:59 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:13:14 [http-nio-8080-exec-9] INFO  c.gastrocontrol.service.AuthService - Login realizado com sucesso para: euthiagojose2004@gmail.com
+2026-06-02 15:14:33 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:14:33 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:14:33 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:14:33 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:14:33 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:14:33 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:14:33 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:14:33 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:42 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:42 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:42 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:42 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:42 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:42 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:42 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:42 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:49 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:49 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:58 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:58 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:58 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:58 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:59 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:59 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:59 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:59 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:59 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:16:59 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:17:34 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:17:34 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:17:34 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 15:17:34 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:03:28 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:03:28 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:03:28 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:03:28 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:03:37 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:03:37 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:03:37 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:03:37 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:04:01 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:04:01 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:04:01 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:04:01 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:04:11 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:04:11 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:04:11 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:04:11 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:04:18 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:04:18 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:04:18 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:04:18 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:05:52 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:05:52 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:05:52 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:05:52 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:06:21 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-02 16:06:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Shutdown initiated...
+2026-06-02 16:06:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Shutdown completed.
+2026-06-02 16:06:29 [main] INFO  c.g.GastroControlApplication - Starting GastroControlApplication using Java 21.0.11 with PID 27260 (C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend\target\classes started by thiago.damota in C:\Users\thiago.damota\Desktop\estuos\gastro-control\backend)
+2026-06-02 16:06:29 [main] DEBUG c.g.GastroControlApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2026-06-02 16:06:29 [main] INFO  c.g.GastroControlApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-02 16:06:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-02 16:06:31 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 125 ms. Found 11 JPA repository interfaces.
+2026-06-02 16:06:32 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-02 16:06:32 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-02 16:06:32 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2026-06-02 16:06:33 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2026-06-02 16:06:33 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3567 ms
+2026-06-02 16:06:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Starting...
+2026-06-02 16:06:34 [main] INFO  com.zaxxer.hikari.pool.HikariPool - GastroControlHikariPool - Added connection org.postgresql.jdbc.PgConnection@4de158ca
+2026-06-02 16:06:34 [main] INFO  com.zaxxer.hikari.HikariDataSource - GastroControlHikariPool - Start completed.
+2026-06-02 16:06:34 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/gastrocontrol (PostgreSQL 16.14)
+2026-06-02 16:06:34 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.085s)
+2026-06-02 16:06:34 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+2026-06-02 16:06:34 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-06-02 16:06:34 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-02 16:06:34 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-06-02 16:06:35 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-02 16:06:35 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-02 16:06:35 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-02 16:06:37 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-02 16:06:37 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-02 16:06:38 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-02 16:06:38 [main] DEBUG c.g.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-02 16:06:39 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-06-02 16:06:39 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-06-02 16:06:41 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoints beneath base path '/actuator'
+2026-06-02 16:06:42 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2026-06-02 16:06:42 [main] INFO  c.g.GastroControlApplication - Started GastroControlApplication in 13.4 seconds (process running for 14.542)
+2026-06-02 16:07:06 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-02 16:07:06 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-02 16:07:06 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-06-02 16:07:07 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:07 [http-nio-8080-exec-1] WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-06-02 16:07:07 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:08 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:08 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:08 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:08 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:08 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:08 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:08 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:08 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:32 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:32 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:32 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:32 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:32 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:32 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:32 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:07:32 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:15:42 [http-nio-8080-exec-7] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 16:15:45 [http-nio-8080-exec-3] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 16:15:48 [http-nio-8080-exec-7] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 16:15:51 [http-nio-8080-exec-3] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 16:15:53 [http-nio-8080-exec-7] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 16:15:54 [http-nio-8080-exec-3] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 16:16:50 [http-nio-8080-exec-4] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 16:17:21 [http-nio-8080-exec-10] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 16:17:27 [http-nio-8080-exec-7] INFO  c.gastrocontrol.service.AuthService - Login realizado com sucesso para: euthiagojose2004@gmail.com
+2026-06-02 16:19:38 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:19:38 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:19:44 [http-nio-8080-exec-9] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 16:19:54 [http-nio-8080-exec-8] INFO  c.gastrocontrol.service.AuthService - Login realizado com sucesso para: euthiagojose2004@gmail.com
+2026-06-02 16:20:14 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:20:14 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:20:19 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:20:19 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:20:19 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:20:19 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:20:19 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:20:19 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:20:19 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:20:19 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:20:19 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:20:19 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:20:31 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:20:31 [http-nio-8080-exec-2] INFO  c.gastrocontrol.service.PratoService - Prato criado: Teste (ID: 3)
+2026-06-02 16:20:31 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:23:04 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:23:04 [http-nio-8080-exec-9] INFO  c.gastrocontrol.service.PratoService - Prato criado: Carne seca (ID: 4)
+2026-06-02 16:23:04 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:27:20 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:27:20 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:27:20 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:27:20 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:27:20 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:27:20 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:27:20 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:27:20 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:27:20 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:27:20 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:27:20 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:27:21 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:30:19 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:30:55 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:33:21 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:33:21 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:33:21 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:33:21 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:33:21 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:33:21 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:33:24 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:33:24 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:33:24 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:33:24 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:33:24 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:33:24 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:33:55 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:35:56 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:35:56 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:35:56 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:35:56 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:35:56 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:35:56 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:36:29 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:36:29 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:36:29 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:36:29 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:36:29 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:36:29 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:37:49 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:03 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:04 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:15 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:15 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:16 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:16 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:16 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:16 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:39 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:39 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:39 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:39 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:39 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:39 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:38:48 [http-nio-8080-exec-2] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 16:39:59 [http-nio-8080-exec-5] WARN  c.g.exception.GlobalExceptionHandler - Acesso não autorizado: Bad credentials
+2026-06-02 16:40:08 [http-nio-8080-exec-6] INFO  c.gastrocontrol.service.AuthService - Login realizado com sucesso para: euthiagojose2004@gmail.com
+2026-06-02 16:57:07 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:57:07 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:57:07 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:57:07 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:57:07 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:57:07 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:57:07 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:57:07 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:57:07 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:57:07 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:57:07 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:57:07 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 16:57:22 [http-nio-8080-exec-8] INFO  c.gastrocontrol.service.AuthService - Login realizado com sucesso para: euthiagojose2004@gmail.com
+2026-06-02 17:00:44 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:01:10 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:01:10 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:01:11 [http-nio-8080-exec-9] INFO  c.g.service.DemandaService - Demanda criada: 'Arroz com Feijão - 2026-06-02' (ID: 3)
+2026-06-02 17:01:22 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:01:28 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:01:28 [http-nio-8080-exec-4] INFO  c.g.service.DemandaService - Demanda criada: 'Arroz com Feijão - 2026-06-02' (ID: 4)
+2026-06-02 17:01:39 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:01:46 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:01:46 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:01:46 [http-nio-8080-exec-2] INFO  c.g.service.DemandaService - Demanda criada: 'Frango Grelhado - 2026-06-02' (ID: 5)
+2026-06-02 17:02:00 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:02:00 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:02:00 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:02:00 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:02:00 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:02:00 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:02:00 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:02:00 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:02:00 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:02:00 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:02:00 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:02:00 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:02:53 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:03:16 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:03:16 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:03:16 [http-nio-8080-exec-8] INFO  c.g.service.DemandaService - Demanda criada: 'Carne seca - 2026-06-03' (ID: 6)
+2026-06-02 17:04:31 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:04:31 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:04:59 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:04:59 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:04:59 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:04:59 [http-nio-8080-exec-4] INFO  c.g.service.IngredienteService - Ingrediente criado: Teste (ID: 12)
+2026-06-02 17:04:59 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:04:59 [http-nio-8080-exec-8] INFO  c.gastrocontrol.service.PratoService - Ingrediente 'Teste' adicionado ao prato 'Carne seca'
+2026-06-02 17:04:59 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:46 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:46 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:46 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:46 [http-nio-8080-exec-9] INFO  c.g.service.EstoqueService - Estoque adicionado: Teste - Lote: LOTE-MANUAL-1780430746676, Qtd: 0.1
+2026-06-02 17:05:48 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:48 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:48 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:48 [http-nio-8080-exec-10] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:48 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:48 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:48 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:48 [http-nio-8080-exec-2] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:48 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:48 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:48 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:48 [http-nio-8080-exec-9] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:48 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:48 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:49 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:49 [http-nio-8080-exec-8] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:49 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:49 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:49 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:49 [http-nio-8080-exec-5] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:49 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:49 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:49 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:49 [http-nio-8080-exec-1] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:49 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:49 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:49 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:49 [http-nio-8080-exec-3] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:50 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-7] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:50 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-6] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:50 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-4] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:50 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-7] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:50 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-2] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:50 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:50 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:51 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:51 [http-nio-8080-exec-9] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:51 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:51 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:51 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:51 [http-nio-8080-exec-8] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:51 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:51 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:51 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:51 [http-nio-8080-exec-5] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:51 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:51 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:51 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:51 [http-nio-8080-exec-1] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:51 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:51 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:51 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:51 [http-nio-8080-exec-3] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.1
+2026-06-02 17:05:52 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:52 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:52 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:52 [http-nio-8080-exec-7] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.9
+2026-06-02 17:05:52 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:52 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:52 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:52 [http-nio-8080-exec-6] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 9.1
+2026-06-02 17:05:53 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:53 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:53 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:53 [http-nio-8080-exec-4] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 8.1
+2026-06-02 17:05:53 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:53 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:53 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:53 [http-nio-8080-exec-10] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 8.1
+2026-06-02 17:05:53 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:53 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:53 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:53 [http-nio-8080-exec-2] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 8.1
+2026-06-02 17:05:53 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:53 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:53 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:53 [http-nio-8080-exec-9] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 8.1
+2026-06-02 17:05:54 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:54 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:54 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:54 [http-nio-8080-exec-8] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 7.1
+2026-06-02 17:05:54 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:54 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:54 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:54 [http-nio-8080-exec-5] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 2.9000000000000004
+2026-06-02 17:05:55 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:55 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:55 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:55 [http-nio-8080-exec-1] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 1.9
+2026-06-02 17:05:55 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:55 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:55 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:55 [http-nio-8080-exec-3] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 1.9
+2026-06-02 17:05:55 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:55 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:55 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:55 [http-nio-8080-exec-7] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 1.9
+2026-06-02 17:05:56 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:56 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:56 [http-nio-8080-exec-6] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:56 [http-nio-8080-exec-6] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 1.9
+2026-06-02 17:05:56 [http-nio-8080-exec-1] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:56 [http-nio-8080-exec-9] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:56 [http-nio-8080-exec-4] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:56 [http-nio-8080-exec-4] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 1.9
+2026-06-02 17:05:57 [http-nio-8080-exec-3] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:57 [http-nio-8080-exec-8] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:57 [http-nio-8080-exec-10] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:57 [http-nio-8080-exec-10] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 0.8999999999999999
+2026-06-02 17:05:57 [http-nio-8080-exec-7] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:57 [http-nio-8080-exec-5] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:57 [http-nio-8080-exec-2] DEBUG c.g.security.JwtAuthenticationFilter - Usuário autenticado via JWT: euthiagojose2004@gmail.com
+2026-06-02 17:05:57 [http-nio-8080-exec-2] INFO  c.g.service.EstoqueService - Movimentação registrada: Teste - Tipo: AJUSTE, Qtd: 9.1

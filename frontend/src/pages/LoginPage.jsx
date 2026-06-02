@@ -1,16 +1,19 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, ArrowLeft } from 'lucide-react';
+import { authService } from '../shared/services/authService';
 
 export default function LoginPage() {
   const navigate = useNavigate();
   const [selectedRole, setSelectedRole] = useState('admin');
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    email: 'sara@boamesa.com.br',
-    password: 'admin123',
+    email: 'admin@gastrocontrol.com',
+    senha: 'Admin@123',
     rememberMe: false,
   });
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const roles = [
     {
@@ -18,14 +21,14 @@ export default function LoginPage() {
       emoji: '👑',
       title: 'Admin',
       description: 'Visão estratégica',
-      credentials: { email: 'sara@boamesa.com.br', password: 'admin123' },
+      credentials: { email: 'admin@gastrocontrol.com', senha: 'Admin@123' },
     },
     {
       id: 'funcionario',
       emoji: '👨‍🍳',
       title: 'Funcionário',
       description: 'Visão operacional',
-      credentials: { email: 'joao@boamesa.com.br', password: 'func123' },
+      credentials: { email: 'operador@gastrocontrol.com', senha: 'Operador@123' },
     },
   ];
 
@@ -33,7 +36,7 @@ export default function LoginPage() {
     setSelectedRole(role.id);
     setFormData({
       email: role.credentials.email,
-      password: role.credentials.password,
+      senha: role.credentials.senha,
       rememberMe: false,
     });
   };
@@ -46,11 +49,22 @@ export default function LoginPage() {
     }));
   };
 
-  const handleLogin = () => {
-    if (selectedRole === 'admin') {
-      navigate('/unidades');
-    } else {
-      navigate('/funcionario/inicio');
+  const handleLogin = async () => {
+    setErrorMessage(null);
+    setLoading(true);
+    try {
+      const res = await authService.login(formData.email, formData.senha);
+      const role = (res.usuario?.role || '').toString().toUpperCase();
+      if (role.includes('ADMIN')) {
+        navigate('/unidades');
+      } else {
+        navigate('/funcionario/inicio');
+      }
+    } catch (err) {
+      console.error('Login falhou', err);
+      setErrorMessage(err?.response?.data?.mensagem || err.message || 'Erro ao autenticar');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -122,7 +136,7 @@ export default function LoginPage() {
                 />
               </div>
 
-              {/* Password */}
+              {/* Senha */}
               <div>
                 <div className="flex items-center justify-between mb-1.5">
                   <label className="text-sm font-semibold text-gray-700">Senha</label>
@@ -133,8 +147,8 @@ export default function LoginPage() {
                 <div className="relative">
                   <input
                     type={showPassword ? 'text' : 'password'}
-                    name="password"
-                    value={formData.password}
+                    name="senha"
+                    value={formData.senha}
                     onChange={handleInputChange}
                     placeholder="••••••••"
                     className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-700 focus:border-transparent pr-11 transition-all placeholder:text-gray-400"
@@ -163,11 +177,16 @@ export default function LoginPage() {
 
               <button
                 type="submit"
-                className="w-full bg-primary-700 hover:bg-primary-800 text-white font-semibold py-3 rounded-xl transition-all duration-200 text-sm shadow-sm hover:shadow-md"
+                disabled={loading}
+                className="w-full bg-primary-700 hover:bg-primary-800 text-white font-semibold py-3 rounded-xl transition-all duration-200 text-sm shadow-sm hover:shadow-md disabled:opacity-60"
               >
-                Entrar na plataforma
+                {loading ? 'Entrando...' : 'Entrar na plataforma'}
               </button>
             </form>
+
+            {errorMessage && (
+              <div className="mt-3 text-sm text-red-600">{errorMessage}</div>
+            )}
 
             {/* Signup Link */}
             <p className="text-center text-sm text-gray-500 mt-5">

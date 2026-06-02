@@ -1,10 +1,8 @@
 package com.gastrocontrol.domain.entity;
 
 import com.gastrocontrol.domain.enums.RelatorioTipo;
-import io.hypersistence.utils.hibernate.type.json.JsonBinaryType;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.Type;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -27,7 +25,7 @@ public class Relatorio {
     private String titulo;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, columnDefinition = "relatorio_tipo")
+    @Column(nullable = false)
     private RelatorioTipo tipo;
 
     @Column(name = "periodo_inicio", nullable = false)

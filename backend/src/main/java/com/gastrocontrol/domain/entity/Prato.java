@@ -44,7 +44,7 @@ public class Prato extends BaseEntity {
     private BigDecimal margemLucro;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, columnDefinition = "categoria_prato")
+    @Column(nullable = false)
     @Builder.Default
     private CategoriaPrato categoria = CategoriaPrato.PRATO_PRINCIPAL;
 

@@ -8,6 +8,7 @@ import AdminDashboard from '../pages/AdminDashboard';
 import AdminDemanda from '../pages/AdminDemanda';
 import AdminEstoque from '../pages/AdminEstoque';
 import AdminFuncionarios from '../pages/AdminFuncionarios';
+import CardapioPage from '../pages/CardapioPage';
 import FuncionarioDashboard from '../pages/FuncionarioDashboard';
 import FuncionarioProducao from '../pages/FuncionarioProducao';
 import FuncionarioTarefas from '../pages/FuncionarioTarefas';
@@ -49,7 +50,7 @@ const routes = [
       },
       {
         path: 'cardapio',
-        element: <div className="text-center py-12">Cardápio - Em desenvolvimento</div>,
+        element: <CardapioPage />,
       },
       {
         path: 'fichas-tecnicas',

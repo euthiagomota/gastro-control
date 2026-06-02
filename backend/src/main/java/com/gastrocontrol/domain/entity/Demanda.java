@@ -42,12 +42,12 @@ public class Demanda extends BaseEntity {
     private LocalDate dataFim;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, columnDefinition = "demanda_tipo")
+    @Column(nullable = false)
     @Builder.Default
     private DemandaTipo tipo = DemandaTipo.DIARIA;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, columnDefinition = "demanda_status")
+    @Column(nullable = false)
     @Builder.Default
     private DemandaStatus status = DemandaStatus.PENDENTE;
 

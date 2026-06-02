@@ -1,22 +1,53 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Plus, Edit2, Trash2, Download, Send } from 'lucide-react';
 import Button from '../components/Button';
 import Card from '../components/Card';
 import Table from '../components/Table';
+import { usuarioService } from '../shared/services/usuarioService';
 
 export default function AdminFuncionarios() {
-  const funcionariosData = [
-    { id: 1, nome: 'João Silva', cargo: 'Cozinheiro', permissao: 'Cozinha', ultimoAcesso: 'Hoje, 08:42', status: 'ativo', initials: 'JS' },
-    { id: 2, nome: 'Ana Lima', cargo: 'Gerente de Turno', permissao: 'Gerente', ultimoAcesso: 'Hoje, 07:30', status: 'ativo', initials: 'AL' },
-    { id: 3, nome: 'Carlos Mendes', cargo: 'Auxiliar de Estoque', permissao: 'Estoque', ultimoAcesso: 'Ontem, 18:15', status: 'ativo', initials: 'CM' },
-    { id: 4, nome: 'Fernanda Costa', cargo: 'Atendente', permissao: 'Atendimento', ultimoAcesso: 'Hoje, 09:00', status: 'ativo', initials: 'FC' },
-    { id: 5, nome: 'Ricardo Borges', cargo: 'Auxiliar de Cozinha', permissao: 'Cozinha', ultimoAcesso: '12/04/2026', status: 'inativo', initials: 'RB' },
-  ];
+  const [funcionarios, setFuncionarios] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    loadFuncionarios();
+  }, []);
+
+  const loadFuncionarios = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const data = await usuarioService.listUsuarios({ role: 'OPERADOR' });
+      setFuncionarios(data || []);
+    } catch (err) {
+      console.error('Erro ao carregar funcionários:', err);
+      setError('Erro ao carregar funcionários.');
+      setFuncionarios([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const funcionariosData = funcionarios.map((func) => ({
+    id: func.id,
+    nome: func.nome,
+    cargo: func.cargo || 'Operador',
+    permissao: func.role || 'OPERADOR',
+    ultimoAcesso: func.ultimoAcesso || 'Nunca',
+    status: func.ativo ? 'ativo' : 'inativo',
+    initials: func.nome
+      .split(' ')
+      .map((n) => n[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2),
+  }));
 
   const metrics = [
-    { label: 'Total', value: 5, icon: '👥', bg: 'bg-blue-50', border: 'border-blue-200', color: 'text-blue-700' },
-    { label: 'Ativos', value: 4, icon: '✅', bg: 'bg-green-50', border: 'border-green-200', color: 'text-green-700' },
-    { label: 'Inativos', value: 1, icon: '🔒', bg: 'bg-gray-50', border: 'border-gray-200', color: 'text-gray-700' },
+    { label: 'Total', value: funcionarios.length, icon: '👥', bg: 'bg-blue-50', border: 'border-blue-200', color: 'text-blue-700' },
+    { label: 'Ativos', value: funcionarios.filter((f) => f.ativo).length, icon: '✅', bg: 'bg-green-50', border: 'border-green-200', color: 'text-green-700' },
+    { label: 'Inativos', value: funcionarios.filter((f) => !f.ativo).length, icon: '🔒', bg: 'bg-gray-50', border: 'border-gray-200', color: 'text-gray-700' },
   ];
 
   const columns = [
@@ -75,9 +106,25 @@ export default function AdminFuncionarios() {
     },
   ];
 
+  if (error) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Funcionários</h1>
+          <p className="text-sm text-gray-500 mt-1">Gerencie a equipe e permissões</p>
+        </div>
+        <Card className="bg-red-50 border-red-200">
+          <p className="text-red-700">{error}</p>
+          <Button variant="primary" size="sm" onClick={loadFuncionarios} className="mt-3">
+            Tentar novamente
+          </Button>
+        </Card>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Funcionários</h1>
@@ -89,7 +136,6 @@ export default function AdminFuncionarios() {
         </Button>
       </div>
 
-      {/* Metrics */}
       <div className="grid grid-cols-3 gap-3 sm:gap-4">
         {metrics.map((metric, index) => (
           <Card key={index} className={`border ${metric.border} ${metric.bg} !p-4`}>
@@ -102,14 +148,18 @@ export default function AdminFuncionarios() {
         ))}
       </div>
 
-      {/* Table */}
       <Card>
-        <div className="overflow-x-auto">
-          <Table columns={columns} data={funcionariosData} />
-        </div>
+        {loading ? (
+          <div className="text-center py-10">
+            <p className="text-gray-500">Carregando funcionários...</p>
+          </div>
+        ) : (
+          <div className="overflow-x-auto">
+            <Table columns={columns} data={funcionariosData} />
+          </div>
+        )}
       </Card>
 
-      {/* Actions */}
       <div className="flex flex-wrap gap-3">
         <Button variant="outline" size="sm" className="flex items-center gap-1.5">
           <Download size={15} />

@@ -1,8 +1,18 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import routes from './routes/routes';
+import routes from './app/router/routes';
+import { OnboardingProvider } from './shared/context/OnboardingContext';
+import { OperationalFlowProvider } from './shared/context/OperationalFlowContext';
+import OnboardingTour from './features/onboarding/components/OnboardingTour';
 
 function App() {
-  return <RouterProvider router={createBrowserRouter(routes)} />;
+  return (
+    <OperationalFlowProvider>
+      <OnboardingProvider>
+        <RouterProvider router={createBrowserRouter(routes)} />
+        <OnboardingTour />
+      </OnboardingProvider>
+    </OperationalFlowProvider>
+  );
 }
 
 export default App;

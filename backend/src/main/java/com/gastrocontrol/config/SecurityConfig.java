@@ -40,7 +40,7 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final UserDetailsService userDetailsService;
 
-    @Value("${gastrocontrol.frontend.url:http://localhost:3000}")
+    @Value("${gastrocontrol.frontend.url:http://localhost:5173}")
     private String frontendUrl;
 
     private static final String[] PUBLIC_URLS = {
@@ -68,6 +68,8 @@ public class SecurityConfig {
                         .requestMatchers("/usuarios/**").hasRole("ADMIN")
                         .requestMatchers("/relatorios/**").hasAnyRole("ADMIN", "OPERADOR")
                         .requestMatchers("/dashboard/**").hasAnyRole("ADMIN", "OPERADOR")
+                        .requestMatchers("/demandas/**").hasAnyRole("ADMIN", "OPERADOR")
+                        .requestMatchers("/estoque/**").hasAnyRole("ADMIN", "OPERADOR")
                         .anyRequest().authenticated()
                 )
                 .authenticationProvider(authenticationProvider())
@@ -78,7 +80,14 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of(frontendUrl, "http://localhost:3000", "http://localhost:5173"));
+        // Adiciona suporte para múltiplos ambientes
+        configuration.setAllowedOrigins(List.of(
+                frontendUrl,
+                "http://localhost:3000",      // Desenvolvimento alternativo
+                "http://localhost:5173",      // Vite dev server
+                "http://127.0.0.1:5173",      // IPv4 local
+                "http://[::1]:5173"           // IPv6 local
+        ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList(
                 "Authorization", "Content-Type", "X-Requested-With",

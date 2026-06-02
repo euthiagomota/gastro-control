@@ -2,6 +2,7 @@ package com.gastrocontrol.controller;
 
 import com.gastrocontrol.domain.enums.DemandaStatus;
 import com.gastrocontrol.dto.common.ApiResponse;
+import com.gastrocontrol.dto.demanda.DemandaPratoUpdateRequest;
 import com.gastrocontrol.dto.demanda.DemandaRequest;
 import com.gastrocontrol.dto.demanda.DemandaResponse;
 import com.gastrocontrol.service.DemandaService;
@@ -57,6 +58,16 @@ public class DemandaController {
         DemandaResponse demanda = demandaService.criar(request);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(ApiResponse.criado(demanda, "Demanda criada com sucesso"));
+    }
+
+    @PatchMapping("/{id}/pratos/{pratoId}")
+    @Operation(summary = "Atualizar item de prato da demanda", description = "Atualiza quantidade e observações de um prato já existente em uma demanda")
+    public ResponseEntity<ApiResponse<DemandaResponse>> atualizarPrato(
+            @PathVariable Long id,
+            @PathVariable Long pratoId,
+            @Valid @RequestBody DemandaPratoUpdateRequest request) {
+        DemandaResponse demanda = demandaService.atualizarPrato(id, pratoId, request);
+        return ResponseEntity.ok(ApiResponse.sucesso(demanda, "Item da demanda atualizado com sucesso"));
     }
 
     @PostMapping("/{id}/processar")

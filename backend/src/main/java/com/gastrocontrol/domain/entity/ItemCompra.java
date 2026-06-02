@@ -32,7 +32,7 @@ public class ItemCompra {
     private BigDecimal quantidade;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, columnDefinition = "unidade_medida")
+    @Column(nullable = false)
     private UnidadeMedida unidade;
 
     @Column(name = "valor_unitario", precision = 15, scale = 4)

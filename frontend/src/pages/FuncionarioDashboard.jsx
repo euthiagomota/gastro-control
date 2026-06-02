@@ -1,6 +1,10 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import Card from '../components/Card';
 import Button from '../components/Button';
+import { usuarioService } from '../shared/services/usuarioService';
+import { demandaService } from '../shared/services/demandaService';
+import { estoqueService } from '../shared/services/estoqueService';
 
 function AlertBadge({ type, message }) {
   const styles = {
@@ -19,44 +23,69 @@ function AlertBadge({ type, message }) {
 
 export default function FuncionarioDashboard() {
   const navigate = useNavigate();
-  const funcionarioName = 'João';
+  const [userData, setUserData] = useState(null);
+  const [demandas, setDemandas] = useState([]);
+  const [alertas, setAlertas] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const hoje = new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
 
+  useEffect(() => {
+    loadDashboardData();
+  }, []);
+
+  const loadDashboardData = async () => {
+    try {
+      setLoading(true);
+      const user = await usuarioService.getCurrentUser();
+      setUserData(user);
+
+      const demandaList = await demandaService.listDemandas({ status: 'ATIVA' });
+      setDemandas(demandaList || []);
+
+      const alertasEstoque = await estoqueService.getAlertasEstoqueBaixo();
+      setAlertas(alertasEstoque || []);
+    } catch (err) {
+      console.error('Erro ao carregar dados:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const metrics = [
-    { label: 'Prod. pendentes', value: 3, icon: '📋', bg: 'bg-amber-50', border: 'border-amber-200', color: 'text-amber-700' },
-    { label: 'Em andamento', value: 1, icon: '👨‍🍳', bg: 'bg-blue-50', border: 'border-blue-200', color: 'text-blue-700' },
-    { label: 'Pedidos aguardando', value: 5, icon: '🛒', bg: 'bg-purple-50', border: 'border-purple-200', color: 'text-purple-700' },
-    { label: 'Alertas de estoque', value: 2, icon: '⚠️', bg: 'bg-red-50', border: 'border-red-200', color: 'text-red-700' },
+    { label: 'Prod. pendentes', value: demandas.filter((d) => d.status !== 'FINALIZADO').length, icon: '📋', bg: 'bg-amber-50', border: 'border-amber-200', color: 'text-amber-700' },
+    { label: 'Em andamento', value: demandas.filter((d) => d.status === 'EM_PRODUCAO').length, icon: '👨‍🍳', bg: 'bg-blue-50', border: 'border-blue-200', color: 'text-blue-700' },
+    { label: 'Pedidos aguardando', value: demandas.filter((d) => d.status === 'AGUARDANDO').length, icon: '🛒', bg: 'bg-purple-50', border: 'border-purple-200', color: 'text-purple-700' },
+    { label: 'Alertas de estoque', value: alertas.length, icon: '⚠️', bg: 'bg-red-50', border: 'border-red-200', color: 'text-red-700' },
   ];
 
-  const alerts = [
-    { id: 1, type: 'error', message: 'Estoque de frango crítico — compra necessária' },
-    { id: 2, type: 'warning', message: 'Queijo Mussarela com validade próxima' },
-  ];
-
-  const priorityTasks = [
-    { id: 1, title: 'Preparar 42 marmitas fitness', priority: 'alta', completed: false },
-    { id: 2, title: 'Separar 5kg de frango', priority: 'alta', completed: false },
-    { id: 3, title: 'Atualizar estoque de arroz', priority: 'media', completed: false },
-    { id: 4, title: 'Confirmar produção de saladas', priority: 'media', completed: true },
-    { id: 5, title: 'Limpar estação de preparo B', priority: 'baixa', completed: false },
-  ];
+  const priorityTasks = demandas.slice(0, 5).map((demanda) => ({
+    id: demanda.id,
+    title: `Preparar ${demanda.quantidadePrevista} ${demanda.prato}`,
+    priority: demanda.prioridade || 'media',
+    completed: demanda.status === 'FINALIZADO',
+  }));
 
   const getPriorityStyle = (priority) => {
     switch (priority) {
-      case 'alta': return 'bg-red-100 text-red-700';
-      case 'media': return 'bg-amber-100 text-amber-700';
-      case 'baixa': return 'bg-green-100 text-green-700';
-      default: return 'bg-gray-100 text-gray-600';
+      case 'alta':
+        return 'bg-red-100 text-red-700';
+      case 'media':
+        return 'bg-amber-100 text-amber-700';
+      case 'baixa':
+        return 'bg-green-100 text-green-700';
+      default:
+        return 'bg-gray-100 text-gray-600';
     }
   };
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Boa noite, {funcionarioName}! 👋</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+            Boa noite, {userData?.nome?.split(' ')[0] || 'Operador'}! 👋
+          </h1>
           <p className="text-sm text-gray-500 mt-1 capitalize">{hoje}</p>
         </div>
         <div className="flex items-center gap-2 bg-green-50 border border-green-200 rounded-xl px-4 py-2.5 self-start">
@@ -68,7 +97,6 @@ export default function FuncionarioDashboard() {
         </div>
       </div>
 
-      {/* Metrics */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {metrics.map((metric, i) => (
           <Card key={i} className={`border ${metric.border} ${metric.bg} !p-4`}>
@@ -79,24 +107,26 @@ export default function FuncionarioDashboard() {
         ))}
       </div>
 
-      {/* Main Grid */}
       <div className="grid lg:grid-cols-3 gap-4 sm:gap-6">
-        {/* Left */}
         <div className="lg:col-span-2 space-y-4 sm:space-y-6">
-          {/* Alerts */}
-          <Card className="border-l-4 border-l-red-500">
-            <div className="flex items-center gap-2.5 mb-4">
-              <span className="text-xl">⚠️</span>
-              <h2 className="text-base font-bold text-gray-900">Alertas urgentes</h2>
-            </div>
-            <div className="space-y-2">
-              {alerts.map((alert) => (
-                <AlertBadge key={alert.id} type={alert.type} message={alert.message} />
-              ))}
-            </div>
-          </Card>
+          {alertas.length > 0 && (
+            <Card className="border-l-4 border-l-red-500">
+              <div className="flex items-center gap-2.5 mb-4">
+                <span className="text-xl">⚠️</span>
+                <h2 className="text-base font-bold text-gray-900">Alertas urgentes</h2>
+              </div>
+              <div className="space-y-2">
+                {alertas.slice(0, 2).map((alerta, i) => (
+                  <AlertBadge
+                    key={i}
+                    type="error"
+                    message={`${alerta.ingrediente} em nível crítico — ${alerta.quantidade} ${alerta.unidade}`}
+                  />
+                ))}
+              </div>
+            </Card>
+          )}
 
-          {/* Priority Tasks */}
           <Card>
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-base font-bold text-gray-900">Tarefas prioritárias</h2>
@@ -117,12 +147,18 @@ export default function FuncionarioDashboard() {
                       : 'bg-white border-gray-200 hover:border-primary-300'
                   }`}
                 >
-                  <div className={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 ${
-                    task.completed ? 'bg-green-500' : 'border-2 border-gray-300'
-                  }`}>
+                  <div
+                    className={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 ${
+                      task.completed ? 'bg-green-500' : 'border-2 border-gray-300'
+                    }`}
+                  >
                     {task.completed && <span className="text-white text-[10px]">✓</span>}
                   </div>
-                  <p className={`flex-1 text-sm font-medium ${task.completed ? 'line-through text-gray-400' : 'text-gray-800'}`}>
+                  <p
+                    className={`flex-1 text-sm font-medium ${
+                      task.completed ? 'line-through text-gray-400' : 'text-gray-800'
+                    }`}
+                  >
                     {task.title}
                   </p>
                   <span className={`px-2 py-0.5 rounded-full text-xs font-semibold flex-shrink-0 ${getPriorityStyle(task.priority)}`}>
@@ -134,7 +170,6 @@ export default function FuncionarioDashboard() {
           </Card>
         </div>
 
-        {/* Right */}
         <div className="space-y-4">
           <Card>
             <h3 className="text-sm font-bold text-gray-900 mb-3">Ações rápidas</h3>
