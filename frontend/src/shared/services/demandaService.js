@@ -70,6 +70,19 @@ export const demandaService = {
   },
 
   /**
+   * Atualiza um item de prato dentro da demanda
+   */
+  async updateDemandaPrato(demandaId, pratoId, data) {
+    try {
+      const response = await api.patch(`/demandas/${demandaId}/pratos/${pratoId}`, data);
+      return response.data.dados;
+    } catch (error) {
+      console.error(`Erro ao atualizar prato ${pratoId} da demanda ${demandaId}:`, error);
+      throw error;
+    }
+  },
+
+  /**
    * Cancela uma demanda
    */
   async cancelarDemanda(id) {

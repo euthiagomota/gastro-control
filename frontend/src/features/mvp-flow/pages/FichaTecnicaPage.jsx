@@ -355,10 +355,10 @@ export default function FichaTecnicaPage() {
 
       {/* Modal Nova Ficha */}
       {isNewModalOpen && (
-        <div className="fixed inset-0 z-[110]" data-tour="ficha-new-modal">
-          <div className="absolute inset-0 bg-slate-900/45" onClick={closeNewModal} />
+        <div className="fixed inset-0 z-[110] pointer-events-none" data-tour="ficha-new-modal">
+          <div className="absolute inset-0 bg-slate-900/45 pointer-events-none" />
           <div className="relative h-full w-full flex items-center justify-center p-4">
-            <div className="w-full max-w-2xl rounded-3xl bg-white border border-gray-200 shadow-2xl p-5 sm:p-6 max-h-[90vh] overflow-y-auto">
+            <div className="w-full max-w-2xl rounded-3xl bg-white border border-gray-200 shadow-2xl p-5 sm:p-6 max-h-[90vh] overflow-y-auto pointer-events-auto">
               <div className="flex items-center justify-between gap-2 mb-4 sticky top-0 bg-white pb-3 border-b border-gray-100">
                 <h3 className="text-xl font-bold text-gray-900" data-tour="ficha-modal-title">Nova Ficha Tecnica</h3>
                 <button
@@ -494,10 +494,10 @@ export default function FichaTecnicaPage() {
 
       {/* Modal Editar Ficha */}
       {isEditModalOpen && editingFicha && (
-        <div className="fixed inset-0 z-[110]">
-          <div className="absolute inset-0 bg-slate-900/45" onClick={() => setIsEditModalOpen(false)} />
+        <div className="fixed inset-0 z-[110] pointer-events-none">
+          <div className="absolute inset-0 bg-slate-900/45 pointer-events-none" />
           <div className="relative h-full w-full flex items-center justify-center p-4">
-            <div className="w-full max-w-2xl rounded-3xl bg-white border border-gray-200 shadow-2xl p-5 sm:p-6 max-h-[90vh] overflow-y-auto">
+            <div className="w-full max-w-2xl rounded-3xl bg-white border border-gray-200 shadow-2xl p-5 sm:p-6 max-h-[90vh] overflow-y-auto pointer-events-auto">
               <div className="flex items-center justify-between gap-2 mb-4 sticky top-0 bg-white pb-3 border-b border-gray-100">
                 <h3 className="text-xl font-bold text-gray-900">Editar Ficha: {editingFicha.prato}</h3>
                 <button

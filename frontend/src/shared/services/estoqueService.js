@@ -69,6 +69,11 @@ export const estoqueService = {
     }
   },
 
+  // Alias com nome em português usado pelo contexto
+  async registrarMovimento(estoqueId, data) {
+    return this.addMovimentacao(estoqueId, data);
+  },
+
   /**
    * Obtém alertas de estoque baixo
    */

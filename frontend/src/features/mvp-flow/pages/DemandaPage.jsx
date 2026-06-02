@@ -8,11 +8,13 @@ import { getUpcomingWeek, formatWeekRangePtBR, formatDayMonthPtBR } from '../../
 import useOnboarding from '../../../shared/context/useOnboarding';
 import { DEMANDA_TOUR_ID, demandaSteps } from '../../onboarding/constants/demandaSteps';
 import useOperationalFlow from '../../../shared/context/useOperationalFlow';
+import { pratoService } from '../../../shared/services/pratoService';
 
 export default function DemandaPage() {
   const navigate = useNavigate();
   const { startTourIfNeeded } = useOnboarding();
   const {
+    pratos,
     dishNames,
     days,
     selectedDayId,
@@ -38,7 +40,15 @@ export default function DemandaPage() {
   const [highlightedRowId, setHighlightedRowId] = useState(null);
   const [editingDemand, setEditingDemand] = useState(null);
 
-  const dishOptions = useMemo(() => [...dishNames, 'Outro'], [dishNames]);
+  const [livePratos, setLivePratos] = useState(pratos || []);
+
+  useEffect(() => {
+    setLivePratos(pratos || []);
+  }, [pratos]);
+
+  const dishOptions = useMemo(() => {
+    return [...(livePratos.map((p) => ({ id: p.id, nome: p.nome })) || []), { id: 'Outro', nome: 'Outro' }];
+  }, [livePratos]);
 
   useEffect(() => {
     startTourIfNeeded(DEMANDA_TOUR_ID, demandaSteps, 'admin-demanda');
@@ -77,15 +87,28 @@ export default function DemandaPage() {
   const resultadoCalculado = useMemo(() => selectedDayRows.filter((row) => row.resultado !== null).length, [selectedDayRows]);
 
   const openAddModal = () => {
-    setNewDemand({
-      dateKey: selectedDayId,
-      prato: '',
-      customPrato: '',
-      previsto: '',
-      eventoEspecial: 'Nao',
-      observacao: '',
-    });
-    setIsAddModalOpen(true);
+    (async () => {
+      try {
+        // Tentar obter lista atualizada do backend
+        const backendPratos = await pratoService.listarPratos();
+        if (Array.isArray(backendPratos) && backendPratos.length) {
+          setLivePratos(backendPratos.map((p) => ({ id: p.id, nome: p.nome })));
+        }
+      } catch (e) {
+        // silencioso — fallback para state atual
+        console.warn('Falha ao atualizar lista de pratos ao abrir modal:', e);
+      } finally {
+        setNewDemand({
+          dateKey: selectedDayId,
+          prato: '',
+          customPrato: '',
+          previsto: '',
+          eventoEspecial: 'Nao',
+          observacao: '',
+        });
+        setIsAddModalOpen(true);
+      }
+    })();
   };
 
   const closeAddModal = () => setIsAddModalOpen(false);
@@ -94,7 +117,12 @@ export default function DemandaPage() {
     event.preventDefault();
 
     const dateKey = newDemand.dateKey;
-    const selectedDish = newDemand.prato === 'Outro' ? newDemand.customPrato.trim() : newDemand.prato;
+    const isId = (v) => v !== null && v !== undefined && /^\d+$/.test(String(v));
+    const selectedDish = newDemand.prato === 'Outro'
+      ? newDemand.customPrato.trim()
+      : (isId(newDemand.prato)
+        ? (livePratos.find((p) => String(p.id) === String(newDemand.prato))?.nome || String(newDemand.prato))
+        : newDemand.prato);
     const previsto = Number(newDemand.previsto);
 
     if (!dateKey || !selectedDish || !Number.isFinite(previsto) || previsto <= 0) {
@@ -106,12 +134,22 @@ export default function DemandaPage() {
     }
 
     ensureDayExists(dateKey);
-    const newItem = addDemand(dateKey, {
-      prato: selectedDish,
+    const payload = {
       previsto,
       eventoEspecial: newDemand.eventoEspecial,
       observacao: newDemand.observacao.trim(),
-    });
+    };
+
+    if (newDemand.prato === 'Outro') {
+      payload.prato = newDemand.customPrato.trim();
+    } else if (isId(newDemand.prato)) {
+      payload.pratoId = Number(newDemand.prato);
+      payload.prato = selectedDish;
+    } else {
+      payload.prato = newDemand.prato;
+    }
+
+    const newItem = addDemand(dateKey, payload);
 
     if (!newItem) {
       setFeedback({
@@ -401,7 +439,7 @@ export default function DemandaPage() {
                   >
                     <option value="">Selecione um prato</option>
                     {dishOptions.map((dish) => (
-                      <option key={dish} value={dish}>{dish}</option>
+                      <option key={dish.id} value={dish.id}>{dish.nome}</option>
                     ))}
                   </select>
                 </div>

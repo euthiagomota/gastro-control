@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, TrendingUp, BarChart3, Shield, Trash2, FileText, ChevronRight } from 'lucide-react';
+import useOperationalFlow from '../../../shared/context/useOperationalFlow';
 
 function FeatureItem({ icon: Icon, title }) {
   return (
@@ -29,6 +30,18 @@ function AlertBadge({ type, message }) {
 
 export default function WelcomePage() {
   const navigate = useNavigate();
+  const {
+    ingredientBreakdown = [],
+    productionRows = [],
+    demandsForSelectedDay = [],
+  } = useOperationalFlow();
+
+  const lowStockList = ingredientBreakdown.filter(i => Number(i.saldoKg) < 0).map(i => i.ingrediente);
+  const lowStockMessage = lowStockList.length ? `Estoque baixo: ${lowStockList.slice(0,3).join(', ')}` : 'Sem alertas de estoque';
+  const totalToProduce = productionRows.reduce((s, r) => s + (Number(r.produzir) || 0), 0);
+  const productionMessage = totalToProduce > 0 ? `${totalToProduce} itens planejados para produzir` : 'Nenhum plano de produção';
+  const pendingOrders = productionRows.filter(r => r.status === 'Pendente').length;
+  const pendingMessage = pendingOrders > 0 ? `${pendingOrders} pedidos aguardando preparo` : `${demandsForSelectedDay.length} demandas hoje`;
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -151,9 +164,9 @@ export default function WelcomePage() {
                 <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-3 sm:p-4">
                   <h3 className="text-xs font-bold text-gray-900 mb-2.5">Alertas do dia</h3>
                   <div className="space-y-2">
-                    <AlertBadge type="error" message="Estoque baixo: frango, arroz, queijo" />
-                    <AlertBadge type="warning" message="42 marmitas fitness para produzir" />
-                    <AlertBadge type="info" message="5 pedidos aguardando preparo" />
+                    <AlertBadge type="error" message={lowStockMessage} />
+                    <AlertBadge type="warning" message={productionMessage} />
+                    <AlertBadge type="info" message={pendingMessage} />
                   </div>
                 </div>
               </div>

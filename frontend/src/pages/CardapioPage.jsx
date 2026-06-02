@@ -173,8 +173,8 @@ export default function CardapioPage() {
       )}
 
       {showNewPratoModal && (
-        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 sm:p-6">
-          <Card className="w-full max-w-md">
+        <div className="fixed inset-0 z-50 bg-black/50 pointer-events-none flex items-center justify-center p-4 sm:p-6">
+          <Card className="w-full max-w-md pointer-events-auto">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-bold text-gray-900">Novo Prato</h2>
               <button onClick={() => setShowNewPratoModal(false)} className="text-gray-400 hover:text-gray-600">

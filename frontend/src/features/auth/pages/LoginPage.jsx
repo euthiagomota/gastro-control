@@ -10,8 +10,8 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
-    email: 'sara@boamesa.com.br',
-    password: 'admin123',
+    email: 'admin@gastrocontrol.com',
+    password: 'Admin@123',
     rememberMe: false,
   });
 
@@ -21,14 +21,14 @@ export default function LoginPage() {
       emoji: '👑',
       title: 'Admin',
       subtitle: 'Visão estratégica',
-      credentials: { email: 'sara@boamesa.com.br', password: 'admin123' },
+      credentials: { email: 'admin@gastrocontrol.com', password: 'Admin@123' },
     },
     {
       id: 'funcionario',
       emoji: '👨‍🍳',
       title: 'Funcionário',
       subtitle: 'Visão operacional',
-      credentials: { email: 'joao@boamesa.com.br', password: 'func123' },
+      credentials: { email: 'operador@gastrocontrol.com', password: 'Operador@123' },
     },
   ];
 

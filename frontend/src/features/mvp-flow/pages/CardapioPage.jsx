@@ -13,6 +13,18 @@ export default function CardapioPage() {
   const [showNewPratoModal, setShowNewPratoModal] = useState(false);
   const [expandedId, setExpandedId] = useState(null);
   const [formData, setFormData] = useState({ nome: '', descricao: '', preco: '', tempo: '', categoria: '' });
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  const categoryOptions = [
+    { value: 'PRATO_PRINCIPAL', label: 'Prato Principal' },
+    { value: 'LANCHE', label: 'Lanche' },
+    { value: 'ENTRADA', label: 'Entrada' },
+    { value: 'SOBREMESA', label: 'Sobremesa' },
+    { value: 'BEBIDA', label: 'Bebida' },
+    { value: 'APERITIVO', label: 'Aperitivo' },
+    { value: 'PORCAO', label: 'Porção' },
+    { value: 'OUTRO', label: 'Outro' },
+  ];
 
   useEffect(() => {
     loadPratos();
@@ -54,22 +66,50 @@ export default function CardapioPage() {
 
   const handleAddPrato = async (e) => {
     e.preventDefault();
-    if (!formData.nome.trim()) return;
+    setErrorMessage(null);
+
+    const nome = formData.nome.trim();
+    const descricao = formData.descricao.trim();
+    const precoVenda = Number(formData.preco);
+    const tempoPreparo = parseInt(formData.tempo, 10);
+    const categoria = formData.categoria;
+
+    if (!nome) {
+      setErrorMessage('Informe o nome do prato.');
+      return;
+    }
+
+    if (!categoria) {
+      setErrorMessage('Escolha uma categoria válida.');
+      return;
+    }
+
+    if (!Number.isFinite(precoVenda) || precoVenda <= 0) {
+      setErrorMessage('Informe um preço de venda válido maior que zero.');
+      return;
+    }
+
+    if (!Number.isFinite(tempoPreparo) || tempoPreparo < 1) {
+      setErrorMessage('Informe um tempo de preparo válido em minutos.');
+      return;
+    }
 
     try {
       await pratoService.criarPrato({
-        nome: formData.nome,
-        descricao: formData.descricao,
-        preco: parseFloat(formData.preco || 0),
-        tempoPreparacao: formData.tempo,
-        categoria: formData.categoria || 'Outros',
+        nome,
+        descricao,
+        precoVenda,
+        tempoPreparo,
+        categoria,
+        porcoes: 1,
       });
 
-      loadPratos();
+      await loadPratos();
       setFormData({ nome: '', descricao: '', preco: '', tempo: '', categoria: '' });
       setShowNewPratoModal(false);
     } catch (err) {
       console.error('Erro ao criar prato:', err);
+      setErrorMessage('Não foi possível criar o prato. Verifique se o backend está disponível e tente novamente.');
     }
   };
 
@@ -173,8 +213,8 @@ export default function CardapioPage() {
       )}
 
       {showNewPratoModal && (
-        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 sm:p-6">
-          <Card className="w-full max-w-md">
+        <div className="fixed inset-0 z-50 bg-black/50 pointer-events-none flex items-center justify-center p-4 sm:p-6">
+          <Card className="w-full max-w-md pointer-events-auto">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-bold text-gray-900">Novo Prato</h2>
               <button onClick={() => setShowNewPratoModal(false)} className="text-gray-400 hover:text-gray-600">
@@ -237,13 +277,19 @@ export default function CardapioPage() {
                   className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-primary-500 text-sm"
                 >
                   <option value="">Selecione uma categoria</option>
-                  {categories.filter((c) => c !== 'Todos').map((cat) => (
-                    <option key={cat} value={cat}>
-                      {cat}
+                  {categoryOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
                     </option>
                   ))}
                 </select>
               </div>
+
+              {errorMessage && (
+                <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                  {errorMessage}
+                </div>
+              )}
 
               <div className="flex gap-2 pt-4 border-t border-gray-200">
                 <Button variant="outline" className="flex-1" onClick={() => setShowNewPratoModal(false)}>

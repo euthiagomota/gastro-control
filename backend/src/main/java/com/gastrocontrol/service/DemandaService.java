@@ -103,6 +103,27 @@ public class DemandaService {
         return toResponse(demanda);
     }
 
+    @Transactional
+    public DemandaResponse atualizarPrato(Long demandaId, Long pratoId, DemandaPratoUpdateRequest request) {
+        Demanda demanda = buscarEntidade(demandaId);
+
+        if (DemandaStatus.FINALIZADA.equals(demanda.getStatus())) {
+            throw new RegraDeNegocioException("Demanda finalizada não pode ser alterada");
+        }
+
+        DemandaPrato demandaPrato = demanda.getDemandaPratos().stream()
+                .filter(dp -> dp.getPrato().getId().equals(pratoId))
+                .findFirst()
+                .orElseThrow(() -> new RecursoNaoEncontradoException("Prato da demanda", pratoId));
+
+        demandaPrato.setQuantidade(request.getQuantidade());
+        demandaPrato.setObservacoes(request.getObservacoes());
+
+        demanda = demandaRepository.save(demanda);
+        log.info("Demanda {} atualizada: prato {} quantidade {}", demandaId, pratoId, request.getQuantidade());
+        return toResponse(demanda);
+    }
+
     /**
      * ==========================================================
      * PRINCIPAL REGRA DE NEGÓCIO DO GASTROCONTROL

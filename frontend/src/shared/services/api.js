@@ -27,14 +27,19 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      // Token expired or invalid
-      localStorage.removeItem('gastrocontrol:auth:token');
-      localStorage.removeItem('gastrocontrol:auth:refreshToken');
-      localStorage.removeItem('gastrocontrol:auth:user');
-      
-      // Optionally redirect to login page
-      if (typeof window !== 'undefined') {
-        window.location.href = '/login';
+      const requestUrl = error.config?.url || '';
+      const isAuthRequest = requestUrl.includes('/auth/login') || requestUrl.includes('/auth/refresh');
+      const token = localStorage.getItem('gastrocontrol:auth:token');
+
+      // Only clear auth and redirect when the user already had a token or when the request was not login/refresh
+      if (token || !isAuthRequest) {
+        localStorage.removeItem('gastrocontrol:auth:token');
+        localStorage.removeItem('gastrocontrol:auth:refreshToken');
+        localStorage.removeItem('gastrocontrol:auth:user');
+
+        if (typeof window !== 'undefined' && !isAuthRequest) {
+          window.location.href = '/login';
+        }
       }
     }
     return Promise.reject(error);

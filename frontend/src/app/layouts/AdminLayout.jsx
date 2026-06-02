@@ -6,6 +6,7 @@ import {
   Calculator, Package, ChefHat, ChevronRight, CircleHelp, Sparkles
 } from 'lucide-react';
 import useOnboarding from '../../shared/context/useOnboarding';
+import { authService } from '../../shared/services/authService';
 import { demandaSteps } from '../../features/onboarding/constants/demandaSteps';
 import { fichaMainSteps } from '../../features/onboarding/constants/fichaSteps';
 import { calculoSteps } from '../../features/onboarding/constants/calculoSteps';
@@ -23,10 +24,29 @@ const sidebarItems = [
   { label: 'Guia', path: '/admin/guia', icon: CircleHelp },
 ];
 
-const adminName = 'Sara Almeida';
-const adminInitials = 'SA';
 const unidadeAtiva = 'Restaurante Boa Mesa';
 const notificacoes = 4;
+
+const getCurrentUser = () => {
+  const user = authService.getCurrentUser();
+  if (!user || !user.nome) {
+    return {
+      nome: 'Administrador',
+      role: 'ADMIN',
+      initials: 'GC',
+    };
+  }
+
+  const words = user.nome.split(' ').filter(Boolean);
+  const initials = words.length === 1
+    ? user.nome.slice(0, 2).toUpperCase()
+    : (words[0][0] + words[words.length - 1][0]).toUpperCase();
+
+  return {
+    ...user,
+    initials,
+  };
+};
 
 const pageContext = {
   '/admin/demanda': {
@@ -65,6 +85,7 @@ export default function AdminLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { startTour, resumeTour, canResumeTour } = useOnboarding();
   const currentContext = pageContext[location.pathname];
+  const currentUser = getCurrentUser();
 
   const isActive = (path) => location.pathname === path;
 
@@ -169,10 +190,10 @@ export default function AdminLayout() {
             className="w-full flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition-colors group"
           >
             <div className="w-9 h-9 bg-primary-700 text-white rounded-xl flex items-center justify-center font-bold text-xs flex-shrink-0">
-              {adminInitials}
+              {currentUser.initials}
             </div>
             <div className="flex-1 text-left min-w-0">
-              <p className="font-semibold text-gray-900 text-xs truncate">{adminName}</p>
+              <p className="font-semibold text-gray-900 text-xs truncate">{currentUser.nome}</p>
               <p className="text-[11px] text-gray-500">Administrador</p>
             </div>
             <LogOut size={16} className="text-gray-400 group-hover:text-red-500 flex-shrink-0 transition-colors" />
@@ -232,9 +253,9 @@ export default function AdminLayout() {
 
             <button className="flex items-center gap-2 px-3 py-1.5 text-gray-700 bg-white hover:bg-gray-50 rounded-xl transition-colors border border-gray-200">
               <div className="w-7 h-7 bg-amber-400 text-white rounded-lg flex items-center justify-center font-bold text-[11px]">
-                {adminInitials}
+                {currentUser.initials}
               </div>
-              <span className="text-sm font-medium hidden sm:block">{adminName}</span>
+              <span className="text-sm font-medium hidden sm:block">{currentUser.nome}</span>
             </button>
           </div>
         </header>
