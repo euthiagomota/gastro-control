@@ -123,11 +123,26 @@ function buildInitialState() {
 function normalizeHydratedState(state) {
   const fallback = buildInitialState();
 
+  // Normalize fichasByPrato to ensure numeric values
+  const normalizedFichasByPrato = state?.fichasByPrato
+    ? Object.entries(state.fichasByPrato).reduce((acc, [prato, ingredientes]) => {
+        acc[prato] = Array.isArray(ingredientes)
+          ? ingredientes.map((item) => ({
+              ...item,
+              id: item.id || `${prato}-${item.ingrediente}`,
+              gramasPorPorcao: Number(item.gramasPorPorcao) || 0,
+              custoPorKg: Number(item.custoPorKg) || 0,
+            }))
+          : [];
+        return acc;
+      }, {})
+    : fallback.fichasByPrato;
+
   return {
     ...fallback,
     ...state,
     pratos: state?.pratos?.length ? state.pratos : fallback.pratos,
-    fichasByPrato: state?.fichasByPrato || fallback.fichasByPrato,
+    fichasByPrato: normalizedFichasByPrato,
     days: state?.days?.length ? state.days : fallback.days,
     demandsByDay: state?.demandsByDay || fallback.demandsByDay,
     estoque: state?.estoque || fallback.estoque,

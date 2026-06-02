@@ -8,7 +8,7 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: 'sara@boamesa.com.br',
-    password: 'admin123',
+    senha: 'admin123',
     rememberMe: false,
   });
 
@@ -18,14 +18,14 @@ export default function LoginPage() {
       emoji: '👑',
       title: 'Admin',
       description: 'Visão estratégica',
-      credentials: { email: 'sara@boamesa.com.br', password: 'admin123' },
+      credentials: { email: 'sara@boamesa.com.br', senha: 'admin123' },
     },
     {
       id: 'funcionario',
       emoji: '👨‍🍳',
       title: 'Funcionário',
       description: 'Visão operacional',
-      credentials: { email: 'joao@boamesa.com.br', password: 'func123' },
+      credentials: { email: 'joao@boamesa.com.br', senha: 'func123' },
     },
   ];
 
@@ -33,7 +33,7 @@ export default function LoginPage() {
     setSelectedRole(role.id);
     setFormData({
       email: role.credentials.email,
-      password: role.credentials.password,
+      senha: role.credentials.senha,
       rememberMe: false,
     });
   };
@@ -122,7 +122,7 @@ export default function LoginPage() {
                 />
               </div>
 
-              {/* Password */}
+              {/* Senha */}
               <div>
                 <div className="flex items-center justify-between mb-1.5">
                   <label className="text-sm font-semibold text-gray-700">Senha</label>
@@ -132,9 +132,9 @@ export default function LoginPage() {
                 </div>
                 <div className="relative">
                   <input
-                    type={showPassword ? 'text' : 'password'}
-                    name="password"
-                    value={formData.password}
+                    type={showPassword ? 'text' : 'senha'}
+                    name="senha"
+                    value={formData.senha}
                     onChange={handleInputChange}
                     placeholder="••••••••"
                     className="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-700 focus:border-transparent pr-11 transition-all placeholder:text-gray-400"

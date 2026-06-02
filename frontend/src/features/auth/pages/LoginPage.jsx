@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, ArrowLeft } from 'lucide-react';
+import { authService } from '../../../shared/services/authService';
 
 export default function LoginPage() {
   const navigate = useNavigate();
   const [selectedRole, setSelectedRole] = useState('admin');
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     email: 'sara@boamesa.com.br',
     password: 'admin123',
@@ -46,8 +49,30 @@ export default function LoginPage() {
     }));
   };
 
-  const handleLogin = () => {
-    navigate('/unidades');
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      setError(null);
+      
+      // Tentar login direto sem validação restritiva
+      const { usuario } = await authService.login(formData.email, formData.password);
+      
+      // Redirecionar baseado no role do usuário
+      if (usuario.role === 'ADMIN') {
+        navigate('/unidades');
+      } else if (usuario.role === 'OPERADOR') {
+        navigate('/funcionario/inicio');
+      } else {
+        navigate('/');
+      }
+    } catch (err) {
+      console.error('Erro ao fazer login:', err);
+      const mensagemErro = err.response?.data?.mensagem || err.message || 'Email ou senha inválidos. Tente novamente.';
+      setError(mensagemErro);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -98,9 +123,14 @@ export default function LoginPage() {
             </div>
 
             <form
-              onSubmit={(e) => { e.preventDefault(); handleLogin(); }}
+              onSubmit={handleLogin}
               className="space-y-4"
             >
+              {error && (
+                <div className="bg-red-50 border border-red-200 rounded-xl p-3.5">
+                  <p className="text-sm text-red-700">{error}</p>
+                </div>
+              )}
               <div>
                 <label className="block text-base sm:text-xl font-semibold text-gray-700 mb-2">E-mail</label>
                 <input
@@ -153,17 +183,22 @@ export default function LoginPage() {
 
               <button
                 type="submit"
-                className="w-full bg-primary-700 hover:bg-primary-800 text-white font-semibold py-3.5 rounded-2xl transition-all duration-200 text-base shadow-sm hover:shadow-md"
+                disabled={loading}
+                className="w-full bg-primary-700 hover:bg-primary-800 disabled:bg-gray-400 text-white font-semibold py-3.5 rounded-2xl transition-all duration-200 text-base shadow-sm hover:shadow-md disabled:cursor-not-allowed"
               >
-                Entrar
+                {loading ? 'Entrando...' : 'Entrar'}
               </button>
             </form>
 
             <p className="text-center text-sm text-gray-500 mt-5">
               Não tem conta?{' '}
-              <a href="#" className="text-primary-700 font-semibold hover:underline">
+              <button
+                type="button"
+                onClick={() => navigate('/cadastro')}
+                className="text-primary-700 font-semibold hover:underline"
+              >
                 Criar conta
-              </a>
+              </button>
             </p>
           </div>
 

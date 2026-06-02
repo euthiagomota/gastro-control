@@ -1,11 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Plus, Download, Send } from 'lucide-react';
 import Button from '../components/Button';
 import Card from '../components/Card';
 import Table from '../components/Table';
+import { demandaService } from '../shared/services/demandaService';
 
 export default function AdminDemanda() {
   const [selectedDay, setSelectedDay] = useState('Ter 06');
+  const [demandas, setDemandas] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [processingId, setProcessingId] = useState(null);
 
   const week = [
     { label: 'Seg', date: '05' },
@@ -17,13 +22,59 @@ export default function AdminDemanda() {
     { label: 'Dom', date: '11' },
   ];
 
-  const demandaData = [
-    { id: 1, prato: 'Marmita Fitness', prevista: 42, real: 38, diferenca: -4, status: 'Normal' },
-    { id: 2, prato: 'Smash Burguer', prevista: 28, real: 31, diferenca: 3, status: 'Acima da meta' },
-    { id: 3, prato: 'Frango Caipira', prevista: 15, real: 14, diferenca: -1, status: 'Normal' },
-    { id: 4, prato: 'Massa Caseira', prevista: 20, real: 18, diferenca: -2, status: 'Normal' },
-    { id: 5, prato: 'Açaí Gourmet', prevista: 35, real: 42, diferenca: 7, status: 'Acima da meta' },
-  ];
+  useEffect(() => {
+    loadDemandas();
+  }, []);
+
+  const loadDemandas = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const data = await demandaService.listDemandas();
+      setDemandas(data || []);
+    } catch (err) {
+      console.error('Erro ao carregar demandas:', err);
+      setError('Erro ao carregar demandas. Tente novamente.');
+      setDemandas([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleProcessarDemanda = async (demandaId) => {
+    try {
+      setProcessingId(demandaId);
+      await demandaService.processarDemanda(demandaId);
+      await loadDemandas();
+    } catch (err) {
+      console.error('Erro ao processar demanda:', err);
+      setError('Erro ao processar demanda. Tente novamente.');
+    } finally {
+      setProcessingId(null);
+    }
+  };
+
+  const handleFinalizarDemanda = async (demandaId) => {
+    try {
+      setProcessingId(demandaId);
+      await demandaService.finalizarDemanda(demandaId);
+      await loadDemandas();
+    } catch (err) {
+      console.error('Erro ao finalizar demanda:', err);
+      setError('Erro ao finalizar demanda. Tente novamente.');
+    } finally {
+      setProcessingId(null);
+    }
+  };
+
+  const demandaData = demandas.map((demanda) => ({
+    id: demanda.id,
+    prato: demanda.prato || 'N/A',
+    prevista: demanda.quantidadePrevista || 0,
+    real: demanda.quantidadeReal || 0,
+    diferenca: (demanda.quantidadeReal || 0) - (demanda.quantidadePrevista || 0),
+    status: demanda.status || 'Pendente',
+  }));
 
   const columns = [
     { key: 'prato', label: 'Prato' },
@@ -51,23 +102,91 @@ export default function AdminDemanda() {
       label: 'Status',
       render: (value) => (
         <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${
-          value === 'Acima da meta' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
+          value === 'Finalizado' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
         }`}>
           {value}
         </span>
       ),
     },
+    {
+      key: 'id',
+      label: 'Ações',
+      render: (value, row) => (
+        <div className="flex items-center gap-2">
+          {row.status !== 'Finalizado' && (
+            <>
+              <Button 
+                variant="outline" 
+                size="xs"
+                onClick={() => handleProcessarDemanda(row.id)}
+                disabled={processingId === row.id}
+              >
+                {processingId === row.id ? 'Processando...' : 'Processar'}
+              </Button>
+              <Button 
+                variant="primary" 
+                size="xs"
+                onClick={() => handleFinalizarDemanda(row.id)}
+                disabled={processingId === row.id}
+              >
+                {processingId === row.id ? 'Finalizando...' : 'Finalizar'}
+              </Button>
+            </>
+          )}
+        </div>
+      ),
+    },
   ];
 
   const insights = [
-    { label: 'Itens acima da meta', value: 2, detail: 'Açaí e Smash Burguer', bg: 'bg-green-50', border: 'border-green-200', color: 'text-green-700', icon: '✅' },
-    { label: 'Itens normais', value: 3, detail: 'Dentro do previsto', bg: 'bg-gray-50', border: 'border-gray-200', color: 'text-gray-700', icon: '📊' },
-    { label: 'Ajustes recomendados', value: 2, detail: 'Marmita e Massa', bg: 'bg-red-50', border: 'border-red-200', color: 'text-red-700', icon: '⚠️' },
+    {
+      label: 'Total de demandas',
+      value: demandas.length,
+      detail: 'Demandas cadastradas',
+      bg: 'bg-blue-50',
+      border: 'border-blue-200',
+      color: 'text-blue-700',
+      icon: '📊',
+    },
+    {
+      label: 'Itens acima da meta',
+      value: demandas.filter((d) => (d.quantidadeReal || 0) > (d.quantidadePrevista || 0)).length,
+      detail: 'Superaram previsão',
+      bg: 'bg-green-50',
+      border: 'border-green-200',
+      color: 'text-green-700',
+      icon: '✅',
+    },
+    {
+      label: 'Itens abaixo da meta',
+      value: demandas.filter((d) => (d.quantidadeReal || 0) < (d.quantidadePrevista || 0)).length,
+      detail: 'Ficaram aquém',
+      bg: 'bg-red-50',
+      border: 'border-red-200',
+      color: 'text-red-700',
+      icon: '⚠️',
+    },
   ];
+
+  if (error) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Demanda</h1>
+          <p className="text-sm text-gray-500 mt-1">Previsão e acompanhamento de vendas</p>
+        </div>
+        <Card className="bg-red-50 border-red-200">
+          <p className="text-red-700">{error}</p>
+          <Button variant="primary" size="sm" onClick={loadDemandas} className="mt-3">
+            Tentar novamente
+          </Button>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Demanda</h1>
@@ -85,7 +204,6 @@ export default function AdminDemanda() {
         </div>
       </div>
 
-      {/* Week Selector */}
       <Card className="!p-4">
         <p className="text-xs font-semibold text-gray-500 mb-3">Semana — 05 a 11 de maio de 2026</p>
         <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-hide">
@@ -108,23 +226,31 @@ export default function AdminDemanda() {
         </div>
       </Card>
 
-      {/* Table */}
       <Card>
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
           <h2 className="text-base font-bold text-gray-900">
             Demanda — {selectedDay} de maio
           </h2>
-          <Button variant="primary" size="sm" className="flex items-center gap-1.5 self-start sm:self-auto">
-            <span>📊</span>
-            Gerar cálculo de produção
-          </Button>
+          {loading ? (
+            <p className="text-sm text-gray-500">Carregando...</p>
+          ) : (
+            <Button variant="primary" size="sm" className="flex items-center gap-1.5 self-start sm:self-auto">
+              <span>📊</span>
+              Gerar cálculo de produção
+            </Button>
+          )}
         </div>
-        <div className="overflow-x-auto">
-          <Table columns={columns} data={demandaData} />
-        </div>
+        {loading ? (
+          <div className="text-center py-10">
+            <p className="text-gray-500">Carregando demandas...</p>
+          </div>
+        ) : (
+          <div className="overflow-x-auto">
+            <Table columns={columns} data={demandaData} />
+          </div>
+        )}
       </Card>
 
-      {/* Insights */}
       <div className="grid sm:grid-cols-3 gap-4">
         {insights.map((item, i) => (
           <Card key={i} className={`border ${item.border} ${item.bg} !p-4`}>
@@ -138,7 +264,6 @@ export default function AdminDemanda() {
         ))}
       </div>
 
-      {/* Actions */}
       <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
         <Button variant="outline" size="sm" className="flex items-center gap-1.5">
           <Download size={15} />

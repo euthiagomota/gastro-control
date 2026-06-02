@@ -1,28 +1,96 @@
-import { useState } from 'react';
-import { Search, Plus, Download, Bell } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Search, Plus, Download, Bell, Package } from 'lucide-react';
 import Button from '../components/Button';
 import Card from '../components/Card';
 import Table from '../components/Table';
+import { estoqueService } from '../shared/services/estoqueService';
 
 export default function AdminEstoque() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [estoque, setEstoque] = useState([]);
+  const [alertas, setAlertas] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    loadEstoque();
+    loadAlertas();
+  }, []);
+
+  const loadEstoque = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const data = await estoqueService.listEstoque();
+      setEstoque(data || []);
+    } catch (err) {
+      console.error('Erro ao carregar estoque:', err);
+      setError('Erro ao carregar estoque.');
+      setEstoque([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const loadAlertas = async () => {
+    try {
+      const alertasBaixo = await estoqueService.getAlertasEstoqueBaixo();
+      setAlertas(alertasBaixo || []);
+    } catch (err) {
+      console.error('Erro ao carregar alertas:', err);
+    }
+  };
+
+  const getStatusColor = (status) => {
+    if (status === 'Crítico') return 'bg-red-100 text-red-700';
+    if (status === 'Baixo') return 'bg-amber-100 text-amber-700';
+    if (status === 'Vencendo') return 'bg-orange-100 text-orange-700';
+    return 'bg-green-100 text-green-700';
+  };
+
+  const estoqueData = estoque.map((item) => ({
+    id: item.id,
+    ingrediente: item.ingrediente?.nome || 'N/A',
+    status: item.status || 'Normal',
+    quantidade: `${item.quantidade} ${item.unidade}`,
+    minimo: item.minimo || 'N/A',
+    validade: item.validadeFormatada || 'N/A',
+    statusColor: getStatusColor(item.status),
+  }));
 
   const metrics = [
-    { label: 'Total de itens', value: 8, icon: '📦', bg: 'bg-blue-50', border: 'border-blue-200', color: 'text-blue-700' },
-    { label: 'Itens críticos', value: 2, icon: '🔴', bg: 'bg-red-50', border: 'border-red-200', color: 'text-red-700' },
-    { label: 'Vencendo em breve', value: 1, icon: '⏰', bg: 'bg-amber-50', border: 'border-amber-200', color: 'text-amber-700' },
-    { label: 'Valor total', value: 'R$ 356', icon: '💰', bg: 'bg-green-50', border: 'border-green-200', color: 'text-green-700' },
-  ];
-
-  const estoqueData = [
-    { id: 1, ingrediente: 'Frango', status: 'Crítico', quantidade: '2.5 kg', minimo: '5 kg', validade: '08/05/2026', statusColor: 'bg-red-100 text-red-700' },
-    { id: 2, ingrediente: 'Arroz', status: 'Baixo', quantidade: '8 kg', minimo: '10 kg', validade: '15/08/2026', statusColor: 'bg-amber-100 text-amber-700' },
-    { id: 3, ingrediente: 'Queijo Mussarela', status: 'Vencendo', quantidade: '1.2 kg', minimo: '3 kg', validade: '10/05/2026', statusColor: 'bg-orange-100 text-orange-700' },
-    { id: 4, ingrediente: 'Alface', status: 'Normal', quantidade: '15 un', minimo: '5 un', validade: '07/05/2026', statusColor: 'bg-green-100 text-green-700' },
-    { id: 5, ingrediente: 'Tomate', status: 'Normal', quantidade: '4 kg', minimo: '2 kg', validade: '09/05/2026', statusColor: 'bg-green-100 text-green-700' },
-    { id: 6, ingrediente: 'Feijão Carioca', status: 'Normal', quantidade: '12 kg', minimo: '5 kg', validade: '20/10/2026', statusColor: 'bg-green-100 text-green-700' },
-    { id: 7, ingrediente: 'Azeite Extra Virgem', status: 'Crítico', quantidade: '0.8 L', minimo: '2 L', validade: '01/01/2027', statusColor: 'bg-red-100 text-red-700' },
-    { id: 8, ingrediente: 'Macarrão Penne', status: 'Normal', quantidade: '5 kg', minimo: '3 kg', validade: '01/12/2026', statusColor: 'bg-green-100 text-green-700' },
+    {
+      label: 'Total de itens',
+      value: estoque.length,
+      icon: '📦',
+      bg: 'bg-blue-50',
+      border: 'border-blue-200',
+      color: 'text-blue-700',
+    },
+    {
+      label: 'Itens críticos',
+      value: estoque.filter((e) => e.status === 'Crítico').length,
+      icon: '🔴',
+      bg: 'bg-red-50',
+      border: 'border-red-200',
+      color: 'text-red-700',
+    },
+    {
+      label: 'Vencendo em breve',
+      value: alertas.length,
+      icon: '⏰',
+      bg: 'bg-amber-50',
+      border: 'border-amber-200',
+      color: 'text-amber-700',
+    },
+    {
+      label: 'Valor total',
+      value: `R$ ${(estoque.reduce((sum, e) => sum + (e.valorTotal || 0), 0) / 100).toFixed(0)}`,
+      icon: '💰',
+      bg: 'bg-green-50',
+      border: 'border-green-200',
+      color: 'text-green-700',
+    },
   ];
 
   const columns = [
@@ -47,7 +115,6 @@ export default function AdminEstoque() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Estoque</h1>
@@ -63,7 +130,6 @@ export default function AdminEstoque() {
         </div>
       </div>
 
-      {/* Metrics */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
         {metrics.map((metric, index) => (
           <Card key={index} className={`border ${metric.border} ${metric.bg} !p-4`}>
@@ -76,7 +142,6 @@ export default function AdminEstoque() {
         ))}
       </div>
 
-      {/* Search */}
       <div className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-4 py-2.5 shadow-sm">
         <Search size={18} className="text-gray-400 flex-shrink-0" />
         <input
@@ -88,20 +153,40 @@ export default function AdminEstoque() {
         />
       </div>
 
-      {/* Table */}
       <Card>
-        <div className="overflow-x-auto">
-          <Table columns={columns} data={filteredData} />
-        </div>
-        {filteredData.length === 0 && (
-          <div className="text-center py-10 text-gray-400">
-            <Package size={40} className="mx-auto mb-2 opacity-30" />
-            <p className="text-sm">Nenhum item encontrado</p>
+        {loading ? (
+          <div className="text-center py-10">
+            <p className="text-gray-500">Carregando estoque...</p>
           </div>
+        ) : (
+          <>
+            <div className="overflow-x-auto">
+              <Table columns={columns} data={filteredData} />
+            </div>
+            {filteredData.length === 0 && (
+              <div className="text-center py-10 text-gray-400">
+                <Package size={40} className="mx-auto mb-2 opacity-30" />
+                <p className="text-sm">Nenhum item encontrado</p>
+              </div>
+            )}
+          </>
         )}
       </Card>
 
-      {/* Actions */}
+      {alertas.length > 0 && (
+        <Card className="border-l-4 border-l-amber-500">
+          <h3 className="text-sm font-bold text-gray-900 mb-3">⚠️ Alertas de vencimento</h3>
+          <div className="space-y-2">
+            {alertas.slice(0, 3).map((alerta, i) => (
+              <div key={i} className="flex items-start gap-2 p-2 bg-amber-50 rounded-lg">
+                <span className="text-xs mt-0.5">📅</span>
+                <span className="text-xs text-amber-700">{alerta.ingrediente} vence em {alerta.dias} dias</span>
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+
       <div className="flex flex-wrap gap-3">
         <Button variant="outline" size="sm" className="flex items-center gap-1.5">
           <Download size={15} />

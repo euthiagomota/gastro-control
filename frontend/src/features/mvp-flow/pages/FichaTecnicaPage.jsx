@@ -14,7 +14,7 @@ import {
 
 function calculateCustoPorPorcao(ingredientes) {
   return ingredientes.reduce(
-    (sum, item) => sum + ((item.gramasPorPorcao / 1000) * item.custoPorKg),
+    (sum, item) => sum + (((Number(item.gramasPorPorcao) || 0) / 1000) * (Number(item.custoPorKg) || 0)),
     0
   );
 }
@@ -284,7 +284,7 @@ export default function FichaTecnicaPage() {
                   Custo estimado por porção:
                 </p>
                 <p className="text-lg font-bold text-primary-700 mt-1">
-                  R$ {ficha.custoPorPorcao.toFixed(2)}
+                  R$ {(Number(ficha.custoPorPorcao) || 0).toFixed(2)}
                 </p>
               </div>
               <div className="flex gap-2 flex-shrink-0">
@@ -327,11 +327,11 @@ export default function FichaTecnicaPage() {
                       </td>
                       <td className="px-4 py-2 text-sm text-gray-700">
                         <span className="text-gray-600">R$</span>
-                        <span className="font-mono ml-1">{item.custoPorKg.toFixed(2)}</span>
+                        <span className="font-mono ml-1">{(Number(item.custoPorKg) || 0).toFixed(2)}</span>
                         <span className="text-gray-500 ml-1">/kg</span>
                       </td>
                       <td className="px-4 py-2 text-sm font-semibold text-gray-900">
-                        R$ {((item.gramasPorPorcao / 1000) * item.custoPorKg).toFixed(2)}
+                        R$ {(((Number(item.gramasPorPorcao) || 0) / 1000) * (Number(item.custoPorKg) || 0)).toFixed(2)}
                       </td>
                     </tr>
                   ))}

@@ -76,7 +76,7 @@ public class AuthService {
     }
 
     /**
-     * Cadastra novo usuário no sistema (apenas OPERADOR por padrão).
+     * Cadastra novo usuário no sistema (apenas ADMIN por padrão).
      */
     @Transactional
     public AuthResponse cadastrar(CadastroRequest request) {
@@ -89,7 +89,7 @@ public class AuthService {
                 .email(request.getEmail())
                 .senha(passwordEncoder.encode(request.getSenha()))
                 .telefone(request.getTelefone())
-                .role(RoleTipo.OPERADOR)
+                .role(RoleTipo.ADMIN)
                 .ativo(true)
                 .build();
 

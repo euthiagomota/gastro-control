@@ -3,6 +3,7 @@ import AdminLayout from '../layouts/AdminLayout';
 import WelcomePage from '../../features/onboarding/pages/WelcomePage';
 import GuiaPage from '../../features/onboarding/pages/GuiaPage';
 import LoginPage from '../../features/auth/pages/LoginPage';
+import CadastroPage from '../../features/auth/pages/CadastroPage';
 import UnidadesPage from '../../features/onboarding/pages/UnidadesPage';
 import DemandaPage from '../../features/mvp-flow/pages/DemandaPage';
 import CardapioPage from '../../features/mvp-flow/pages/CardapioPage';
@@ -24,6 +25,10 @@ const routes = [
       {
         path: '/login',
         element: <LoginPage />,
+      },
+      {
+        path: '/cadastro',
+        element: <CadastroPage />,
       },
       {
         path: '/unidades',

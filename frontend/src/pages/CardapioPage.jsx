@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { ChevronDown, Search, Plus, X } from 'lucide-react';
-import Button from '../../../components/Button';
-import Card from '../../../components/Card';
-import { pratoService } from '../../../shared/services/pratoService';
+import Button from '../components/Button';
+import Card from '../components/Card';
+import { pratoService } from '../shared/services/pratoService';
 
 export default function CardapioPage() {
   const [pratos, setPratos] = useState([]);
