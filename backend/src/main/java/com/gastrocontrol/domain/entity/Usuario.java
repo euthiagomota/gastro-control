@@ -35,7 +35,7 @@ public class Usuario extends BaseEntity {
     private String senha;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, columnDefinition = "role_tipo")
+    @Column(nullable = false)
     private RoleTipo role;
 
     @Column(nullable = false)

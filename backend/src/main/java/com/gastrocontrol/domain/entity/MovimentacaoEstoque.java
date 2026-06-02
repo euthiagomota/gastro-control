@@ -25,7 +25,7 @@ public class MovimentacaoEstoque {
     private Estoque estoque;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, columnDefinition = "movimentacao_tipo")
+    @Column(nullable = false)
     private MovimentacaoTipo tipo;
 
     @Column(nullable = false, precision = 15, scale = 4)

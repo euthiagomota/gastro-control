@@ -38,7 +38,7 @@ public class ListaCompras extends BaseEntity {
     private LocalDate dataConclusao;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, columnDefinition = "lista_compras_status")
+    @Column(nullable = false)
     @Builder.Default
     private ListaComprasStatus status = ListaComprasStatus.ABERTA;
 

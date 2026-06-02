@@ -21,8 +21,9 @@ public class ResultadoProcessamentoDemanda {
     private Long demandaId;
     private int totalIngredientes;
     private int totalItensComDeficit;
-    private List<DemandaService.ItemDeficit> itensComDeficit;
-    private List<DemandaService.NecessidadeIngrediente> necessidades;
+    // Refer to the top-level DTO classes in the same package
+    private List<ItemDeficit> itensComDeficit;
+    private List<NecessidadeIngrediente> necessidades;
     private Long listaComprasId;
     private boolean listaComprasGerada;
 }
