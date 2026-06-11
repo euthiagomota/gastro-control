@@ -71,14 +71,36 @@ export const authService = {
   async cadastro(data) {
     try {
       const response = await api.post('/auth/cadastro', data);
-      const { accessToken, refreshToken, usuario } = response.data.dados;
 
-      // Store tokens and user info
-      localStorage.setItem('gastrocontrol:auth:token', accessToken);
-      localStorage.setItem('gastrocontrol:auth:refreshToken', refreshToken);
-      localStorage.setItem('gastrocontrol:auth:user', JSON.stringify(usuario));
+      const dados = response.data.dados;
 
-      return { accessToken, refreshToken, usuario };
+      const usuario = {
+        id: dados.usuarioId,
+        nome: dados.nome,
+        email: dados.email,
+        role: dados.role,
+      };
+
+      localStorage.setItem(
+        'gastrocontrol:auth:token',
+        dados.accessToken
+      );
+
+      localStorage.setItem(
+        'gastrocontrol:auth:refreshToken',
+        dados.refreshToken
+      );
+
+      localStorage.setItem(
+        'gastrocontrol:auth:user',
+        JSON.stringify(usuario)
+      );
+
+      return {
+        accessToken: dados.accessToken,
+        refreshToken: dados.refreshToken,
+        usuario,
+      };
     } catch (error) {
       console.error('Erro ao registrar:', error);
       throw error;
